@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter Article{% endblock %}
+
+{% block body %}
+    {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+    
+    {# Utilisez form_row pour chaque champ individuellement. #}
+    {{ form_row(form.nom) }}
+    {{ form_row(form.prix) }}
+
+    {# N'utilisez pas form_widget ici car form_row rend déjà tout ce qui est nécessaire. #}
+    <button type="submit" class="btn btn-success">Créer</button>
+    
+    {{ form_end(form) }}
+{% endblock %}
